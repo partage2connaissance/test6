@@ -5,38 +5,6 @@
     <title>Affichage des titres JSON</title>
 </head>
 <body>
-    <h1>Titres des éléments de la base de données JSON</h1>
-    <div id="data-container"></div>
-
-    <script>
-        // Fonction pour charger les données JSON et les afficher
-        function loadAndDisplayTitles(url) {
-            fetch(url)
-                .then(response => {
-                    // Vérifie si la requête a réussi
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(json => {
-                    // Une fois les données JSON chargées, affiche les titres
-                    const container = document.getElementById('data-container');
-                    json.forEach(item => {
-                        const element = document.createElement('p');
-                        element.textContent = item.title;
-                        container.appendChild(element);
-                    });
-                })
-                .catch(e => {
-                    console.error("Erreur lors du chargement du fichier JSON: ", e);
-                });
-        }
-
-        // Appel de la fonction avec le chemin vers votre fichier JSON
-        loadAndDisplayTitles('bdd.json');
-    </script>
-
     <h2>Salut</h2>
 </body>
 </html>
